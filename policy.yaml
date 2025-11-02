@@ -1,0 +1,21 @@
+# policy.yaml
+defaults:
+  allow_types: ["text/plain", "image/png", "application/zip"]
+  deny_types: ["application/x-msdownload"]
+  max_size_mb: 5
+  fail_on: deny
+
+pdf:
+  allow_javascript: false
+  forbid_embedded_files: true
+
+image:
+  max_dimensions: [5000, 5000]
+  max_frames: 10
+  strip_metadata: warn
+
+archive:
+  zip_max_depth: 5
+  zip_max_ratio: 20
+  forbid_symlinks: true
+  forbid_path_traversal: true

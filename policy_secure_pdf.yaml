@@ -1,0 +1,31 @@
+# Permite apenas PDFs com validações rígidas.
+
+defaults:
+  max_size_mb: 10
+  allow_types:
+    - application/pdf
+  deny_types:
+    - '*'
+  fail_on: deny
+
+pdf:
+  allow_javascript: false
+  max_pages: 50
+  forbid_embedded_files: true
+
+image:
+  max_dimensions: [0, 0]
+  max_frames: 0
+  strip_metadata: deny
+
+archive:
+  zip_max_depth: 0
+  zip_max_ratio: 1
+  forbid_symlinks: true
+  forbid_path_traversal: true
+
+overrides:
+  - if_source: trusted-tests
+    set:
+      defaults.max_size_mb: 20
+      pdf.max_pages: 100

@@ -1,0 +1,30 @@
+[package]
+name = "guardupload"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "GuardUpload CLI — validação segura de uploads."
+authors = ["SoftCtrl"]
+
+[dependencies]
+anyhow = "1.0"
+clap = { version = "4.5", features = ["derive"] }
+hex = "0.4"
+rayon = "1.10"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+serde_yaml = "0.9"
+sha2 = "0.10"
+thiserror = "1.0"
+time = { version = "0.3", features = ["formatting"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["fmt", "json"] }
+tree_magic_mini = "3.0"
+walkdir = "2.5"
+image = { version = "0.25", default-features = false, features = ["png", "jpeg", "gif", "bmp", "ico", "pnm", "tga", "dds", "webp"] }
+zip = { version = "0.6", default-features = false, features = ["deflate"] }
+
+[dev-dependencies]
+assert_cmd = "2.0"
+predicates = "3.1"
+tempfile = "3.10"
